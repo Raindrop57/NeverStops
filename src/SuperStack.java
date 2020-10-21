@@ -19,8 +19,11 @@ public class SuperStack<T> {
 		return false;
 	}
 	
-	public boolean isFull() {
-		//TODO
+	public boolean isFull() 
+	{
+		if (top == items.length) {
+			return true;
+		}
 		return false;
 	}
 	
@@ -29,15 +32,20 @@ public class SuperStack<T> {
 			return false;
 		}
 		
-		items[top] = item;
-		++top;
+		items[top++] = item;
 
 		return true;
 	}
 	
 	public T pop() {
-		//TODO
-		return null;
+		if (isEmpty()) {
+			return null;
+		}
+		
+		T result = items[--top];
+		items[top] = null;
+		return result;
+
 	}
 	
 	public String toString() {

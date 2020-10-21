@@ -28,17 +28,33 @@ class SuperStackTest {
 
 	@Test
 	void testIsFull() {
-		fail("Not yet implemented");
+		SuperStack<Integer> stack = new SuperStack<Integer>(1);
+		boolean result = stack.isFull();
+		assertFalse(result);
+		
+		stack.push(3);
+		result = stack.isFull();
+		assertTrue(result);
 	}
 
 	@Test
 	void testPush() {
-		fail("Not yet implemented");
+		SuperStack<Integer> stack = new SuperStack<Integer>(1);
+		boolean result = stack.push(3);
+		assertTrue(result);
+		
+		result = stack.push(3456);
+
+		assertFalse(result);
 	}
 
 	@Test
 	void testPop() {
-		fail("Not yet implemented");
+		SuperStack<Integer> stack = new SuperStack<Integer>(1);
+		stack.push(3);
+		int result = stack.pop();
+		assertEquals(result, 3);
+
 	}
 
 	@Test
